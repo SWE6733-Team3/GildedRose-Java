@@ -18,3 +18,7 @@ Some of the changes applied to the original code are:
         -Added specification of item properties based on the name of the item
         
 Navigate to https://github.com/james-things/GildedRose-Java/tree/master/src/main/java/com/gildedrose to start browsing the code revisions.
+
+FROM EASTON THIS IS HOW YOU GET AROUND THE SSL
+
+add this - git -c http.sslVerify=false pull to your git functions
