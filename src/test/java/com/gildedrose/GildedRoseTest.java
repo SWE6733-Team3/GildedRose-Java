@@ -106,6 +106,41 @@ class GildedRoseTest {
 
     @Test
     void updateAgingQuality() {
+        //create a set of test items and instantiate GildedRose class
+        Item testItemA = new Item("Test Item > 10", 11, 10);
+        Item testItemB = new Item("Test Item > 5", 9, 10);
+        Item testItemC = new Item("Test Item > 0)", 4, 10);
+        Item testItemD = new Item("Test Item <=0", -1, 10);
+        GildedRose testGildedRose = new GildedRose();
+
+        testGildedRose.SetItemFlags(testItemA);
+        testGildedRose.UpdateAgingQuality(testItemA);
+        assertTrue(testItemA.sellIn > 10 );
+        assertFalse((testItemD.sellIn <= 10 && testItemD.sellIn > 5));
+        assertFalse((testItemD.sellIn <= 5 && testItemD.sellIn > 0));
+        assertFalse(testGildedRose.isPastSellIn);
+
+        testGildedRose.SetItemFlags(testItemB);
+        testGildedRose.UpdateAgingQuality(testItemB);
+        assertFalse(testItemB.sellIn > 10 );
+        assertTrue((testItemB.sellIn <= 10 && testItemB.sellIn > 5));
+        assertFalse((testItemB.sellIn <= 5 && testItemB.sellIn > 0));
+        assertFalse(testGildedRose.isPastSellIn);
+        
+
+        testGildedRose.SetItemFlags(testItemC);
+        testGildedRose.UpdateAgingQuality(testItemC);
+        assertFalse(testItemC.sellIn > 10 );
+        assertFalse((testItemC.sellIn <= 10 && testItemC.sellIn > 5));
+        assertTrue((testItemC.sellIn <= 5 && testItemC.sellIn > 0) );
+        assertFalse(testGildedRose.isPastSellIn );
+
+        testGildedRose.SetItemFlags(testItemD);
+        testGildedRose.UpdateAgingQuality(testItemD);
+        assertFalse(testItemD.sellIn > 10 );
+        assertFalse((testItemD.sellIn <= 10 && testItemD.sellIn > 5) );
+        assertFalse((testItemD.sellIn <= 5 && testItemD.sellIn > 0));
+        assertTrue(testGildedRose.isPastSellIn && testItemD.quality == 0);        
     }
 
     @Test
