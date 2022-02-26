@@ -112,34 +112,38 @@ class GildedRoseTest {
         Item testItemC = new Item("Test Item > 0)", 4, 10);
         Item testItemD = new Item("Test Item <=0", -1, 10);
         GildedRose testGildedRose = new GildedRose();
+        int oldQuality;
 
+        oldQuality = testItemA.quality;
         testGildedRose.SetItemFlags(testItemA);
         testGildedRose.UpdateAgingQuality(testItemA);
-        assertTrue(testItemA.sellIn > 10 );
-        assertFalse((testItemD.sellIn <= 10 && testItemD.sellIn > 5));
-        assertFalse((testItemD.sellIn <= 5 && testItemD.sellIn > 0));
-        assertFalse(testGildedRose.isPastSellIn);
+        assertTrue(testItemA.sellIn > 10 && (testItemA.quality == oldQuality+1));
+        assertFalse((testItemD.sellIn <= 10 && testItemD.sellIn > 5) && (testItemA.quality == oldQuality+2));
+        assertFalse((testItemD.sellIn <= 5 && testItemD.sellIn > 0) && (testItemA.quality == oldQuality+3));
+        assertFalse(testGildedRose.isPastSellIn && testItemA.quality == 0);
 
+        oldQuality = testItemB.quality;
         testGildedRose.SetItemFlags(testItemB);
         testGildedRose.UpdateAgingQuality(testItemB);
-        assertFalse(testItemB.sellIn > 10 );
-        assertTrue((testItemB.sellIn <= 10 && testItemB.sellIn > 5));
-        assertFalse((testItemB.sellIn <= 5 && testItemB.sellIn > 0));
-        assertFalse(testGildedRose.isPastSellIn);
+        assertFalse(testItemB.sellIn > 10 && (testItemB.quality == oldQuality+1));
+        assertTrue((testItemB.sellIn <= 10 && testItemB.sellIn > 5) && (testItemB.quality == oldQuality+2));
+        assertFalse((testItemB.sellIn <= 5 && testItemB.sellIn > 0) && (testItemB.quality == oldQuality+3));
+        assertFalse(testGildedRose.isPastSellIn && testItemB.quality == 0);
         
-
+        oldQuality = testItemC.quality;
         testGildedRose.SetItemFlags(testItemC);
         testGildedRose.UpdateAgingQuality(testItemC);
-        assertFalse(testItemC.sellIn > 10 );
-        assertFalse((testItemC.sellIn <= 10 && testItemC.sellIn > 5));
-        assertTrue((testItemC.sellIn <= 5 && testItemC.sellIn > 0) );
+        assertFalse(testItemC.sellIn > 10 && (testItemC.quality == oldQuality + 1));
+        assertFalse((testItemC.sellIn <= 10 && testItemC.sellIn > 5) && (testItemC.quality == oldQuality + 2));
+        assertTrue((testItemC.sellIn <= 5 && testItemC.sellIn > 0) && (testItemC.quality == oldQuality + 3) );
         assertFalse(testGildedRose.isPastSellIn );
 
+        oldQuality = testItemD.quality;
         testGildedRose.SetItemFlags(testItemD);
         testGildedRose.UpdateAgingQuality(testItemD);
-        assertFalse(testItemD.sellIn > 10 );
-        assertFalse((testItemD.sellIn <= 10 && testItemD.sellIn > 5) );
-        assertFalse((testItemD.sellIn <= 5 && testItemD.sellIn > 0));
+        assertFalse(testItemD.sellIn > 10 && (testItemD.quality == oldQuality + 1));
+        assertFalse((testItemD.sellIn <= 10 && testItemD.sellIn > 5) && (testItemD.quality == oldQuality + 2) );
+        assertFalse((testItemD.sellIn <= 5 && testItemD.sellIn > 0) && (testItemD.quality == oldQuality + 3));
         assertTrue(testGildedRose.isPastSellIn && testItemD.quality == 0);        
     }
 
