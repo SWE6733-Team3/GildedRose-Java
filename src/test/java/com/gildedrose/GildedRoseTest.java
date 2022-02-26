@@ -157,6 +157,12 @@ class GildedRoseTest {
 
     @Test
     void decrementSellIn() {
+        Item testItemA = new Item("Test Item > 10", 11, 10);
+        GildedRose testGildedRose = new GildedRose();
+        int oldSellin = testItemA.sellIn;
+
+        testGildedRose.DecrementSellIn(testItemA);
+        assertTrue(testItemA.sellIn == (oldSellin - 1));
     }
 
     @Test
