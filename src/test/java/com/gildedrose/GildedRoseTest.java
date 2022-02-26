@@ -8,11 +8,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GildedRoseTest {
 
-    //Added a SetItems(Item[]) to make test case writing easier
-    //to quickly set the array, you can use the syntax:
-    //SetItems(new Item[]{itemA, itemB, itemC});
+    // Added a SetItems(Item[]) to make test case writing easier
+    // to quickly set the array, you can use the syntax:
+    // SetItems(new Item[]{itemA, itemB, itemC});
     // OR
-    //SetItems(new Item[]{new Item("name", sellIn, quality), new Item("name", sellIn, quality)});
+    // SetItems(new Item[]{new Item("name", sellIn, quality), new Item("name",
+    // sellIn, quality)});
 
     @BeforeEach
     void setUp() {
@@ -26,7 +27,7 @@ class GildedRoseTest {
     void foo() {
         Item[] items = new Item[] { new Item("foo", 0, 0) };
         GildedRose app = new GildedRose(items);
-        app.UpdateQuality();
+        app.updateQuality();
         assertEquals("foo", app.items[0].name);
     }
 
@@ -41,15 +42,15 @@ class GildedRoseTest {
 
     @Test
     void setItemFlags() {
-        //create a set of test items and instantiate GildedRose class
+        // create a set of test items and instantiate GildedRose class
         Item testItemC = new Item("Conjured Test Item", 0, 10);
         Item testItemL = new Item("Sulfuras Test Item", 10, 10);
         Item testItemA = new Item("Aged Brie Test", 10, 0);
-        Item testItemA2 = new Item("test concert tickets",10, 10);
+        Item testItemA2 = new Item("test concert tickets", 10, 10);
         Item testItemN = new Item("Normal Test Item", 10, 10);
         GildedRose testGildedRose = new GildedRose();
 
-        //assert defaults are false
+        // assert defaults are false
         assertFalse(testGildedRose.isAging);
         assertFalse(testGildedRose.isConjured);
         assertFalse(testGildedRose.isLegendary);
@@ -57,8 +58,8 @@ class GildedRoseTest {
         assertFalse(testGildedRose.isPastSellIn);
         assertFalse(testGildedRose.isUnsellable);
 
-        //test conjured item
-        testGildedRose.SetItemFlags(testItemC);
+        // test conjured item
+        testGildedRose.setItemFlags(testItemC);
         assertFalse(testGildedRose.isAging);
         assertTrue(testGildedRose.isConjured);
         assertFalse(testGildedRose.isLegendary);
@@ -66,8 +67,8 @@ class GildedRoseTest {
         assertTrue(testGildedRose.isPastSellIn);
         assertFalse(testGildedRose.isUnsellable);
 
-        //test legendary item
-        testGildedRose.SetItemFlags(testItemL);
+        // test legendary item
+        testGildedRose.setItemFlags(testItemL);
         assertFalse(testGildedRose.isAging);
         assertFalse(testGildedRose.isConjured);
         assertTrue(testGildedRose.isLegendary);
@@ -75,8 +76,8 @@ class GildedRoseTest {
         assertFalse(testGildedRose.isPastSellIn);
         assertFalse(testGildedRose.isUnsellable);
 
-        //test aging item - "Aged Brie"
-        testGildedRose.SetItemFlags(testItemA);
+        // test aging item - "Aged Brie"
+        testGildedRose.setItemFlags(testItemA);
         assertTrue(testGildedRose.isAging);
         assertFalse(testGildedRose.isConjured);
         assertFalse(testGildedRose.isLegendary);
@@ -84,8 +85,8 @@ class GildedRoseTest {
         assertFalse(testGildedRose.isPastSellIn);
         assertTrue(testGildedRose.isUnsellable);
 
-        //test aging item - "concert"
-        testGildedRose.SetItemFlags(testItemA2);
+        // test aging item - "concert"
+        testGildedRose.setItemFlags(testItemA2);
         assertTrue(testGildedRose.isAging);
         assertFalse(testGildedRose.isConjured);
         assertFalse(testGildedRose.isLegendary);
@@ -93,8 +94,8 @@ class GildedRoseTest {
         assertFalse(testGildedRose.isPastSellIn);
         assertFalse(testGildedRose.isUnsellable);
 
-        //test normal item
-        testGildedRose.SetItemFlags(testItemN);
+        // test normal item
+        testGildedRose.setItemFlags(testItemN);
         assertFalse(testGildedRose.isAging);
         assertFalse(testGildedRose.isConjured);
         assertFalse(testGildedRose.isLegendary);
