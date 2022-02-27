@@ -14,4 +14,5 @@ Some of the changes applied to the original code are:
 Navigate to https://github.com/james-things/GildedRose-Java/tree/master/src/main/java/com/gildedrose to start browsing the code revisions.
 
 Mob Coding session recording: https://youtu.be/X5pzgs_TzsI
+
     -The team used CodeTogether: https://www.codetogether.com/
