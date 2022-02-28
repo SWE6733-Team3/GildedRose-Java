@@ -6,6 +6,7 @@ class GildedRose {
     protected boolean isAging;
     protected boolean isLegendary;
     protected boolean isConjured;
+    protected boolean discountEligible; // flag item for as being eligible for discount
 
     // no arg constructor
     public GildedRose() {
@@ -55,10 +56,15 @@ class GildedRose {
             item.quality = item.quality + 1;
         if (item.sellIn <= 10 && item.sellIn > 5)
             item.quality = item.quality + 2;
-        if (item.sellIn <= 5 && item.sellIn > 0)
+        if (item.sellIn <= 5 && item.sellIn > 0) {
             item.quality = item.quality + 3;
-        if (item.sellIn <= 0)
+            this.discountEligible = (item.sellIn <= 5 && item.sellIn > 0); // sets item as discount eligible if sellIn
+                                                                           // value is less than or equal to 5
+        }
+        if (item.sellIn <= 0) {
             item.quality = 0;
+            this.discountEligible = (item.quality == 0); // sets item as discount eligible if item quality is 0
+        }
     }
 
     // update the quality of a conjured item
@@ -69,6 +75,8 @@ class GildedRose {
     // update the quality of a normal item
     protected void updateNormalQuality(Item item) {
         item.quality -= ((item.sellIn <= 0) ? 2 : 1);
+        this.discountEligible = (item.sellIn <= 0); // sets item as discount eligible if item sellIn value is less than
+                                                    // or equal to 0
     }
 
     // reduce sellIn by 1
@@ -82,7 +90,9 @@ class GildedRose {
             item.quality = 80;
         if (item.quality > 50 && !this.isLegendary)
             item.quality = 50;
-        if (item.quality < 0)
+        if (item.quality < 0) {
             item.quality = 0;
+            this.discountEligible = (item.quality == 0); // sets item as discount eligible if item quality is 0
+        }
     }
 }
