@@ -24,6 +24,6 @@ to start browsing these revisions.
 
 Mob Coding session recording: https://youtu.be/X5pzgs_TzsI
 
-    -The team used CodeTogether: https://www.codetogether.com/
+- The team used CodeTogether: https://www.codetogether.com/
 
 This repository represents SWE 6733 Team 3's Assignment 2 submission.
