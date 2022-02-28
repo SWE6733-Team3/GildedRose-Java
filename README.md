@@ -17,7 +17,7 @@ https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/main/Java
 
 - Designed a complete test suite which provides coverage to all methods in GildedRose
 
-Navigate to https://github.com/james-things/GildedRose-Java/tree/master/src/main/java/com/gildedrose 
+Navigate to https://github.com/SWE6733-Team3/GildedRose-Java/tree/master/src/main/java/com/gildedrose 
 to start browsing these revisions.
 
 ## Mob Coding
