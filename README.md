@@ -1,4 +1,4 @@
-# GildedRose-Java-Refactoring Kata
+# GildedRose Java Refactoring Kata
 
 A refactoring and feature expansion of the "Gilded Rose Refactoring Kata" Java edition, from:
 https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/main/Java
