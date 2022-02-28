@@ -89,7 +89,6 @@ class GildedRoseTest {
 
     @Test
     void setItems() {
-        //assertNull assertNotNull
         //ensuring the two arrays are correct before and after
         assertNull(testGildedRoseNoItems.items);
 
@@ -120,14 +119,16 @@ class GildedRoseTest {
         assertFalse(testGildedRose.isConjured);
         assertFalse(testGildedRose.isLegendary);
         assertFalse(testGildedRose.isNormal);
+        assertFalse(testGildedRose.discountEligible);
 
 
         // test conjured item
-        testGildedRose.setItemFlags(testItemC1);
+        testGildedRose.setItemFlags(testItemC2);
         assertFalse(testGildedRose.isAging);
         assertTrue(testGildedRose.isConjured);
         assertFalse(testGildedRose.isLegendary);
         assertFalse(testGildedRose.isNormal);
+        assertTrue(testGildedRose.discountEligible);
 
 
         // test legendary item
@@ -136,6 +137,7 @@ class GildedRoseTest {
         assertFalse(testGildedRose.isConjured);
         assertTrue(testGildedRose.isLegendary);
         assertFalse(testGildedRose.isNormal);
+        assertFalse(testGildedRose.discountEligible);
 
 
         // test aging item - "Aged Brie"
@@ -144,6 +146,7 @@ class GildedRoseTest {
         assertFalse(testGildedRose.isConjured);
         assertFalse(testGildedRose.isLegendary);
         assertFalse(testGildedRose.isNormal);
+        assertTrue(testGildedRose.discountEligible);
 
 
         // test aging item - "concert"
@@ -152,6 +155,7 @@ class GildedRoseTest {
         assertFalse(testGildedRose.isConjured);
         assertFalse(testGildedRose.isLegendary);
         assertFalse(testGildedRose.isNormal);
+        assertFalse(testGildedRose.discountEligible);
 
 
         // test normal item
@@ -160,6 +164,8 @@ class GildedRoseTest {
         assertFalse(testGildedRose.isConjured);
         assertFalse(testGildedRose.isLegendary);
         assertTrue(testGildedRose.isNormal);
+        assertFalse(testGildedRose.discountEligible);
+
     }
 
     @Test
@@ -218,7 +224,7 @@ class GildedRoseTest {
     void applyQualityLimits() {
         testGildedRose.setItemFlags(testItemQ1);
         testGildedRose.applyQualityLimits(testItemQ1);
-         testGildedRose.setItemFlags(testItemQ2);
+        testGildedRose.setItemFlags(testItemQ2);
         testGildedRose.applyQualityLimits(testItemQ2);
         testGildedRose.setItemFlags(testItemL);
         testGildedRose.applyQualityLimits(testItemL);
@@ -226,5 +232,26 @@ class GildedRoseTest {
         assertEquals(50,testItemQ1.quality);
         assertEquals(0,testItemQ2.quality);
         assertEquals(80,testItemL.quality);
+    }
+
+    @Test
+    void getTypeString() {
+        String testString = testGildedRose.getTypeString(testItemL);
+        assertEquals("legendary", testString);
+        testString = testGildedRose.getTypeString(testItemC1);
+        assertEquals("conjured", testString);
+        testString = testGildedRose.getTypeString(testItemN1);
+        assertEquals("normal", testString);
+        testString = testGildedRose.getTypeString(testItemA1);
+        assertEquals("aging", testString);
+    }
+
+    @Test
+    void getItemsAsString() {
+        String testString = testGildedRose.getItemsAsString();
+        assertTrue(testString.contains("Conjured Test Item"));
+        assertTrue(testString.contains("Sulfuras Test Item"));
+        assertTrue(testString.contains("Normal Test Item"));
+        assertTrue(testString.contains("Aged Brie Test"));
     }
 }

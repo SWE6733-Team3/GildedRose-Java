@@ -34,8 +34,6 @@ public class TestApplicationFixture {
 
         for (int i = 0; i < days; i++) {
             System.out.println("-------- day " + i + " --------");
-            // System.out.printf("%-50s %-10s %-10s %-10s %-10s %-10s\n",
-            // "name", "sellIn", "quality","ages","legendary","conjured");
             System.out.println("Name, SellIn, Quality");
             for (Item item : items) {
                 System.out.println(item);
