@@ -20,6 +20,16 @@ https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/main/Java
 Navigate to https://github.com/SWE6733-Team3/GildedRose-Java/tree/master/src/main/java/com/gildedrose 
 to start browsing these revisions.
 
+## Test Case Coverage
+
+Test case coverage an "code smell: analysis was performed using Sonarqube. https://www.sonarqube.org/
+
+The results of this analysis has been included in our repository in the "analysis" subdirectory.
+
+### Test-Driven Development
+
+Where feasible, test-driven development practices were employed in developing this solution.
+
 ## Mob Coding
 
 Mob Coding session recording: https://youtu.be/X5pzgs_TzsI
