@@ -20,14 +20,15 @@ https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/main/Java
 Navigate to https://github.com/SWE6733-Team3/GildedRose-Java/tree/master/src/main/java/com/gildedrose 
 to start browsing these revisions.
 
+## Repo Analysis
+
+The team used Sonarqube to analyze the repo with each pull request merge. Final analysis screenshots are found in the "analysis" folder. The folder contains repo overview, issues, and coverage screenshots. https://www.sonarqube.org/
+
 ## Mob Coding
 
 Mob Coding session recording: https://youtu.be/X5pzgs_TzsI
 
 - The team used CodeTogether: https://www.codetogether.com/
+- Where feasible, test-driven development practices were employed in developing this solution
 
-This repository represents SWE 6733 Team 3's Assignment 2 submission.
-
-## Repo Analysis
-
-The team used Sonarqube to analyze the repo with each pull request merge. Final analysis screenshots are found in the "analysis" folder. The folder contains repo overview, issues, and coverage screenshots.
+#### This repository represents SWE 6733 Team 3's Assignment 2 submission.
