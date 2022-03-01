@@ -22,7 +22,7 @@ to start browsing these revisions.
 
 ## Test Case Coverage and "Code Smells"
 
-Test case coverage an "code smell: analysis was performed using Sonarqube. https://www.sonarqube.org/
+Test case coverage an "code smell" analysis was performed using Sonarqube. https://www.sonarqube.org/
 
 The results of this analysis has been included in our repository in the "analysis" subdirectory.
 
