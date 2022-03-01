@@ -2,7 +2,7 @@ package com.gildedrose;
 
 public class TestApplicationFixture {
     public static void main(String[] args) {
-        System.out.println("Test Name Here");
+        System.out.println("Main Method Test Fixture");
 
         Item[] items = new Item[] {
                 new Item("+5 Dexterity Vest", 10, 20),
@@ -33,12 +33,9 @@ public class TestApplicationFixture {
         }
 
         for (int i = 0; i < days; i++) {
-            System.out.println("-------- day " + i + " --------");
-            System.out.println("Name, SellIn, Quality");
-            for (Item item : items) {
-                System.out.println(item);
-            }
-            System.out.println();
+            //refactored test to use getItemsAsString() method to build output string
+            System.out.println("\nDay " + i + ":");
+            System.out.println(app.getItemsAsString());
             app.updateQuality();
         }
     }

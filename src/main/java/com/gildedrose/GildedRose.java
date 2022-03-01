@@ -107,8 +107,9 @@ class GildedRose {
     // Concatenates formatted list of items and their properties (New Feature)
     protected String getItemsAsString() {
         StringBuilder itemString = new StringBuilder();
+        itemString.append(String.format("%n %-50s %-10s %-10s %-10s", "Name", "Quality", "Sell In", "Item Type"));
         for (Item i : this.items) {
-            itemString.append(String.format("\n %-50s %-10s %-10s %-10s",
+            itemString.append(String.format("%n %-50s %-10s %-10s %-10s",
                 i.name, i.quality, i.sellIn, "(" + getTypeString(i) + ")"));
         }
         return itemString.toString();

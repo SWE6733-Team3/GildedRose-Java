@@ -115,57 +115,55 @@ class GildedRoseTest {
     @Test
     void setItemFlags() {
         // assert defaults are false
-        assertFalse(testGildedRose.isAging);
-        assertFalse(testGildedRose.isConjured);
-        assertFalse(testGildedRose.isLegendary);
-        assertFalse(testGildedRose.isNormal);
-        assertFalse(testGildedRose.discountEligible);
+        assertFalse(testGildedRose.isConjured
+            && testGildedRose.isLegendary
+            && testGildedRose.isAging
+            && testGildedRose.discountEligible
+            && testGildedRose.isNormal);
 
 
         // test conjured item
         testGildedRose.setItemFlags(testItemC2);
-        assertFalse(testGildedRose.isAging);
-        assertTrue(testGildedRose.isConjured);
-        assertFalse(testGildedRose.isLegendary);
-        assertFalse(testGildedRose.isNormal);
-        assertTrue(testGildedRose.discountEligible);
+        assertFalse(testGildedRose.isAging
+            && testGildedRose.isLegendary
+            && testGildedRose.isNormal);
+        assertTrue(testGildedRose.isConjured
+            && testGildedRose.discountEligible);
 
 
         // test legendary item
         testGildedRose.setItemFlags(testItemL);
-        assertFalse(testGildedRose.isAging);
-        assertFalse(testGildedRose.isConjured);
         assertTrue(testGildedRose.isLegendary);
-        assertFalse(testGildedRose.isNormal);
-        assertFalse(testGildedRose.discountEligible);
+        assertFalse(testGildedRose.isConjured
+            && testGildedRose.isAging
+            && testGildedRose.isNormal
+            && testGildedRose.discountEligible);
 
 
         // test aging item - "Aged Brie"
         testGildedRose.setItemFlags(testItemA1);
-        assertTrue(testGildedRose.isAging);
-        assertFalse(testGildedRose.isConjured);
-        assertFalse(testGildedRose.isLegendary);
-        assertFalse(testGildedRose.isNormal);
-        assertTrue(testGildedRose.discountEligible);
-
+        assertTrue(testGildedRose.isAging
+            && testGildedRose.discountEligible);
+        assertFalse(testGildedRose.isConjured
+            && testGildedRose.isLegendary
+            && testGildedRose.isNormal);
 
         // test aging item - "concert"
         testGildedRose.setItemFlags(testItemA2);
         assertTrue(testGildedRose.isAging);
-        assertFalse(testGildedRose.isConjured);
-        assertFalse(testGildedRose.isLegendary);
-        assertFalse(testGildedRose.isNormal);
-        assertFalse(testGildedRose.discountEligible);
+        assertFalse(testGildedRose.isConjured
+            && testGildedRose.isLegendary
+            && testGildedRose.isNormal
+            && testGildedRose.discountEligible);
 
 
         // test normal item
         testGildedRose.setItemFlags(testItemN1);
-        assertFalse(testGildedRose.isAging);
-        assertFalse(testGildedRose.isConjured);
-        assertFalse(testGildedRose.isLegendary);
         assertTrue(testGildedRose.isNormal);
-        assertFalse(testGildedRose.discountEligible);
-
+        assertFalse(testGildedRose.isConjured
+            && testGildedRose.isLegendary
+            && testGildedRose.isAging
+            && testGildedRose.discountEligible);
     }
 
     @Test
