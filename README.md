@@ -20,7 +20,7 @@ https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/main/Java
 Navigate to https://github.com/SWE6733-Team3/GildedRose-Java/tree/master/src/main/java/com/gildedrose 
 to start browsing these revisions.
 
-## Test Case Coverage
+## Test Case Coverage and "Code Smells"
 
 Test case coverage an "code smell: analysis was performed using Sonarqube. https://www.sonarqube.org/
 
